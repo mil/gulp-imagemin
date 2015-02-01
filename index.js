@@ -16,7 +16,7 @@ module.exports = function (opts) {
 	var totalBytes = 0;
 	var totalSavedBytes = 0;
 	var totalFiles = 0;
-	var validExts = ['.jpg', '.jpeg', '.png', '.gif', '.svg'];
+	var validExts = opts.extensions || ['.jpg', '.jpeg', '.png', '.gif', '.svg'];
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
